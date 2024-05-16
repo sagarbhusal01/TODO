@@ -1,0 +1,8 @@
+[Desktop Entry]
+#copy this file to /usr/share/applications to get the Client Side Application in the App List
+Name=Todo
+Comment= Todo app 
+Exec=/usr/bin/java -jar /opt/Todo/Client.jar
+Icon=/usr/share/icons/Todo-Client.png
+Terminal=false
+Type=Application

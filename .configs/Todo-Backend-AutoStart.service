@@ -1,0 +1,16 @@
+[Unit]
+#copy this file to the /etc/systemd/system/ to run the Todo-Backend-Autostart 
+Description=Todo-Backend-Autostart
+Requires=network.target remote-fs.target
+After=network.target remote-fs.target
+
+[Service]
+Type=simple
+User=spongebob
+WorkingDirectory=/opt/Todo/
+ExecStart=/usr/bin/java -jar /opt/Todo/Backend.jar
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target 
