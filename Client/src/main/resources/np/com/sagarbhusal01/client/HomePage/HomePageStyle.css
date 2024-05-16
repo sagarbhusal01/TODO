@@ -1,0 +1,94 @@
+#Vbox
+{
+    -fx-background-color: #373737;
+}
+#ToolBar {
+    -fx-background-color: #373737;
+    -fx-padding: 10 5 10 5;
+}
+
+#AddTodoButton
+{
+    -fx-background-color: #575757;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+
+#TodoTextField
+{
+    -fx-background-color: #575757;
+    -fx-text-fill: white;
+}
+
+
+#TodoListView
+{
+-fx-font-size: 16px;
+-fx-background-color: #373737;
+
+}
+
+.list-cell
+{
+    -fx-background-color: #373737;
+    -fx-text-fill: white;
+    -fx-padding: 5 5 5 15;
+}
+
+.list-cell:filled {
+    -fx-background-color: #373737;
+
+}
+
+.list-cell:filled:hover {
+    -fx-background-color: #40414A;
+}
+
+
+.list-cell:filled:selected:focused, .list-cell:filled:selected {
+    -fx-background-color: #3e3f4c;
+}
+
+#contextMenu
+{
+    -fx-background-color: #373737;
+-fx-text-fill: white;
+}
+
+
+
+#HomeButtonBar
+{
+    -fx-padding: 10 5 10 5;
+}
+
+#SeeCompletedTodos
+{
+    -fx-background-color: #575757;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+
+#IPLabel
+{
+    -fx-text-fill: #808080;
+    -fx-font-size: 10;
+}
+
+#Refresh
+{
+    -fx-background-color: #575757;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+#AddTodoButton:focused,
+#Refresh:focused,
+#SeeCompletedTodos:focused
+{
+    -fx-background-color: #439A8A;
+}
+
+
