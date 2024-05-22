@@ -1,6 +1,7 @@
 import { Dimensions,StyleSheet } from "react-native";
 
 export const BACKGROUND = "#373737";
+export const PLACEHOLDER = "#989898";
 export const BUTTONS = "#868686";
 export const TEXTFEILD = "#575757";
 export const INFORMATION = "#505050";

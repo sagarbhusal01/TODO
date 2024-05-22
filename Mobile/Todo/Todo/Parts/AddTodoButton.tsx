@@ -6,7 +6,10 @@ const AddTodoButton = (props: any) => {
   return (
     <TouchableOpacity
       style={AddTodoButtonStyles.AddTodoButton}
-      activeOpacity={0.5}
+      activeOpacity={0.6}
+      onPress={() => {
+        props.setToggleOverlay(true);
+      }}
     >
       <Image
         source={require("../../assets/Images/Add.png")}
