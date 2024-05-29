@@ -80,6 +80,12 @@
     width: 300px;
 }
 
+
+.IsCompletedButtonContainer {
+    height: 22px;
+    width: 22px;
+}
+
 .IsCompletedButton {
     background-color: #8CA8B8;
     height: 22px;
@@ -88,6 +94,10 @@
     border: none;
 }
 
+.DeleteButtonContainer {
+    height: 45px;
+    width: 45px;
+}
 
 
 .DeleteButton {

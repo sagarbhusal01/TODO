@@ -1,4 +1,4 @@
-import { ADDTODOURL, GETALLTODOURL } from "../Global";
+import { ADDTODOURL } from "../Global";
 import { TodoResponseType } from "../Types";
 import { GetLocalURL } from "./LocalURL";
 
