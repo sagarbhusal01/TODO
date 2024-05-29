@@ -1,4 +1,6 @@
+import { useEffect } from "react";
 import "../../Styles/Todo/TodoStyles.css";
+import { GetAllTodos } from "./Functions/GetAllTodos";
 import Settings from "./Parts/Settings";
 import TextField from "./Parts/TextField";
 import TodoList from "./Parts/TodoList";
@@ -36,9 +38,19 @@ export default function Todo() {
     },
   ];
 
+  useEffect(() => {
+    HandleGetAllData();
+  }, []);
+
   //   ======================================
   //   ======================================
   //   ======================================
+  const HandleGetAllData = () => {
+    GetAllTodos().then((res) => {
+      console.log(res);
+    });
+  };
+
   const HandleDelete = (id: number) => {
     console.log("delete Id number" + id);
   };
