@@ -3,8 +3,8 @@ import React from "react";
 export default function TodoList(props: any) {
   return (
     <>
-      {props.Data && (
-        <>
+      {props.Data.length ? (
+        <div id="ListCellWrapper">
           {props.Data.map((names: any) => {
             return (
               <div
@@ -48,7 +48,9 @@ export default function TodoList(props: any) {
               </div>
             );
           })}
-        </>
+        </div>
+      ) : (
+        <p id="NoTOdo">No Todo To Show</p>
       )}
     </>
   );

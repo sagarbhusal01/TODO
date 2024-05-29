@@ -9,7 +9,7 @@ import { DeleteTodo } from "./Functions/DeleteTodo";
 import { ToggleTodo } from "./Functions/ToggleTodo";
 import { AddTodo } from "./Functions/AddTodo";
 export default function Todo() {
-  const [Data, setData] = useState<TodoResponseType[]>();
+  const [Data, setData] = useState<TodoResponseType[]>([]);
 
   useEffect(() => {
     HandleGetAllData();
