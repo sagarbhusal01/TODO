@@ -1,2 +1,2 @@
-# Spring-Javafx-Todo
-### Simple Javafx todo application powered by spring-boot RESTful API
+## TODO
+### Todo Application made with Spring boot Backend and various framework for Client side...
