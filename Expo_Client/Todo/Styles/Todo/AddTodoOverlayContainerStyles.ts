@@ -22,7 +22,7 @@ export const AddTodoOverlayContainerStyles = StyleSheet.create({
     alignItems: "center",
     paddingTop: 15,
     paddingBottom: 15,
-    zIndex: 10,
+    zIndex:10
   },
   Header: {
     color: WHITE,
@@ -36,7 +36,6 @@ export const AddTodoOverlayContainerStyles = StyleSheet.create({
     marginTop: 15,
     borderRadius: 8,
     paddingLeft: 15,
-    paddingRight: 15,
     color: WHITE,
   },
   DoneButtonContainer: {

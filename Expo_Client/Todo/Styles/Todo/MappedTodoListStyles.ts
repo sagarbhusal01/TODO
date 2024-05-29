@@ -4,7 +4,6 @@ import {
   BACKGROUND,
   BUTTONS,
   HEIGHT,
-  COMPLETEDPOP,
   INFORMATION,
   WHITE,
   WIDTH,
@@ -36,7 +35,7 @@ export const MappedTodoListStyles = StyleSheet.create({
   ToggleCompletedButton: {
     height: 20,
     width: 20,
-    backgroundColor: COMPLETEDPOP,
+    backgroundColor: BUTTONS,
     borderRadius: 100,
   },
   RemoveButtonImage: {

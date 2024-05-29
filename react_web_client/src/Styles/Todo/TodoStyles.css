@@ -1,0 +1,108 @@
+#Container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #373737;
+    flex-direction: column;
+}
+
+#SettingButton {
+    position: absolute;
+    right: 20px;
+    top: 30px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    border-radius: 6px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#SettingImage {
+    height: 35px;
+    width: 35px;
+}
+
+#SettingButton:focus {
+    outline: 1px solid grey;
+
+}
+
+
+#TextField {
+    background-color: #575757;
+    height: 45px;
+    width: 400px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 15px;
+}
+
+#TextField:focus {
+    outline: none;
+}
+
+#TextField::placeholder {
+    color: rgb(167, 167, 167)
+}
+
+
+.ListCell {
+    height: 45px;
+    width: 400px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 2.5px;
+    padding-bottom: 2.5px;
+    background-color: #505050;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 8px;
+    border-radius: 8px;
+    justify-content: space-between;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.TodoTextContainer {
+    width: 300px;
+}
+
+.IsCompletedButton {
+    background-color: #8CA8B8;
+    height: 22px;
+    width: 22px;
+    border-radius: 100px;
+    border: none;
+}
+
+
+
+.DeleteButton {
+    height: 45px;
+    width: 45px;
+    border: none;
+    background-color: transparent;
+    border-radius: 5px;
+}
+
+.DeleteButton:focus {
+    outline: 1px solid grey;
+}
+
+.DeleteImage {
+    height: 35px;
+    width: 31px;
+}
