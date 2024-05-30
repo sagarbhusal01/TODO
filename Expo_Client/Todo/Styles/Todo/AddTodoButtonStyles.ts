@@ -23,7 +23,7 @@ export const AddTodoButtonStyles = StyleSheet.create({
     alignItems: "center",
   },
   AddTodoButtonImage: {
-    height: 32,
-    width: 32,
+    height: 35,
+    width: 28,
   },
 });

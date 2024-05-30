@@ -4,6 +4,8 @@ import {
   Image,
   TouchableOpacity,
   ToastAndroid,
+  ScrollView,
+  RefreshControl,
 } from "react-native";
 import React, { useEffect, useLayoutEffect, useState } from "react";
 import Header from "./Parts/Header";
@@ -68,6 +70,16 @@ const Todo = () => {
     });
   };
 
+  const [refreshing, setRefreshing] = React.useState(false);
+
+  const HandleRefresh = React.useCallback(() => {
+    setRefreshing(true);
+    HandleGetAllTodos();
+    setTimeout(() => {
+      setRefreshing(false);
+    }, 1000);
+  }, []);
+
   return (
     <View style={GlobalStyles.Container}>
       <Header setToggleSetting={setToggleSetting} />
@@ -81,6 +93,8 @@ const Todo = () => {
         TodoData={TodoData}
         HandleDeleteButton={HandleDeleteButton}
         HandleToggleTodo={HandleToggleTodo}
+        refreshing={refreshing}
+        HandleRefresh={HandleRefresh}
       />
 
       <AddTodoButton setToggleOverlay={setToggleOverlay} />

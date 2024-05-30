@@ -1,19 +1,18 @@
 import { View, Text, Image, TouchableOpacity, FlatList } from "react-native";
 import React from "react";
-
-import { TodoResponseType } from "../Types";
 import { MappedTodoListStyles } from "../../Styles/Todo/MappedTodoListStyles";
 const MappedTodoList = (props: any) => {
   return (
     <View style={MappedTodoListStyles.TodoListContainer}>
-      {props.TodoData && (
-        <FlatList
-          data={props.TodoData}
-          renderItem={(item) => RenderingData(item, props)}
-          keyExtractor={(names) => names.id}
-          ListEmptyComponent={HandleEmptyData}
-        />
-      )}
+      <FlatList
+        data={props.TodoData}
+        renderItem={(item) => RenderingData(item, props)}
+        keyExtractor={(names) => names.id}
+        ListEmptyComponent={HandleEmptyData}
+        refreshing={props.refreshing}
+        onRefresh={() => props.HandleRefresh()}
+      />
+      <View style={{ marginTop: 160, backgroundColor: "white" }} />
     </View>
   );
 };
@@ -21,7 +20,7 @@ const MappedTodoList = (props: any) => {
 export default MappedTodoList;
 
 const HandleEmptyData = () => {
-  return <Text>No Todo Found</Text>;
+  return <Text style={MappedTodoListStyles.NoTodoList}>No Todo Found</Text>;
 };
 
 const RenderingData = (names: any, props: any) => {

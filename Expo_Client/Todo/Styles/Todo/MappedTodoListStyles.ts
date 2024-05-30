@@ -12,6 +12,7 @@ import {
 export const MappedTodoListStyles = StyleSheet.create({
   TodoListContainer: {
     marginTop: 20,
+    marginBottom:200
   },
   TodoListCell: {
     height: 60,
@@ -48,6 +49,12 @@ export const MappedTodoListStyles = StyleSheet.create({
     width: WIDTH * 0.67,
   },
   TodoText: {
+    color: WHITE,
+    fontSize: 15,
+    fontWeight: "600",
+  },
+  NoTodoList: {
+    alignSelf: "center",
     color: WHITE,
     fontSize: 15,
     fontWeight: "600",
