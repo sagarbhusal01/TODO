@@ -60,7 +60,7 @@
 #ListCellWrapper {
     overflow-y: auto;
     overflow-x: hidden;
-    max-height: 520px;
+    max-height: 560px;
 }
 
 .ListCell {
@@ -128,4 +128,71 @@
     color: white;
     font-size: 16px;
     font-weight: 600;
+}
+
+
+#Overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #363636b0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#OverlayContainer {
+    height: 80px;
+    padding: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    align-items: center;
+    background-color: #505050;
+    border-radius: 8px;
+}
+
+#SettingInput {
+    background-color: #575757;
+    height: 45px;
+    width: 250px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#SettingInput:focus {
+    outline: none;
+}
+
+#SettingInput::placeholder {
+    color: rgb(167, 167, 167)
+}
+
+#SettingAddButton {
+    height: 45px;
+    width: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    border: none;
+    background-color: #868686;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+
+}
+
+#SettingAddButton:focus {
+    outline: 2px solid lightgrey;
 }

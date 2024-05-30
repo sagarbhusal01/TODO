@@ -8,6 +8,7 @@ import { TodoResponseType } from "./Types";
 import { DeleteTodo } from "./Functions/DeleteTodo";
 import { ToggleTodo } from "./Functions/ToggleTodo";
 import { AddTodo } from "./Functions/AddTodo";
+import { SetLocalURL } from "./Functions/LocalURL";
 export default function Todo() {
   const [Data, setData] = useState<TodoResponseType[]>([]);
 
@@ -43,7 +44,8 @@ export default function Todo() {
   };
 
   const HandleSetting = (text: string) => {
-    console.log("Setting text" + text);
+    SetLocalURL(text);
+    HandleGetAllData();
   };
 
   //   ======================================
