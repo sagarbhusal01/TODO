@@ -1,0 +1,15 @@
+{
+  "name": "todo",
+  "version": "1.0.0",
+  "description": "Todo Client made in Electron ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "author": "Sagar Bhusal",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^30.0.9"
+  }
+}
