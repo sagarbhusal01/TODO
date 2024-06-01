@@ -4,6 +4,15 @@ import { GetLocalURL } from "../Functions/LocalURL";
 export default function Settings(props: any) {
   const [Toggle, setToggle] = useState<boolean>(false);
   const [IP, setIP] = useState<string>("");
+
+  // ==================================
+  const HandleEscapeKey = (e: any) => {
+    if (e.keyCode === 27) {
+      setToggle(false);
+    }
+  };
+  // ==================================
+
   return (
     <>
       <button
@@ -21,7 +30,12 @@ export default function Settings(props: any) {
 
       {Toggle && (
         <div id="Overlay">
-          <div id="OverlayContainer">
+          <div
+            id="OverlayContainer"
+            onKeyDown={(e) => {
+              HandleEscapeKey(e);
+            }}
+          >
             <input
               type="text"
               id="SettingInput"

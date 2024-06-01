@@ -1,13 +1,16 @@
 // electron.js
-const { app, BrowserWindow } = require("electron");
+const { app, BrowserWindow, globalShortcut } = require("electron");
 const path = require("path");
 
 let mainWindow;
 
 function createWindow() {
   mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
+    icon: "./icon.png",
+    title: "Todo",
+    width: 550,
+    height: 780,
+
     webPreferences: {
       nodeIntegration: true,
     },
@@ -15,12 +18,19 @@ function createWindow() {
 
   const startURL = `file://${path.join(__dirname, "./build/index.html")}`;
 
+  mainWindow.setMenu(null);
+  mainWindow.setResizable(false);
   mainWindow.loadURL(startURL);
 
   mainWindow.on("closed", () => (mainWindow = null));
 }
 
-app.on("ready", createWindow);
+app.on("ready", () => {
+  globalShortcut.register("CommandOrControl+w", () => {
+    app.quit();
+  });
+  createWindow();
+});
 
 app.on("window-all-closed", () => {
   if (process.platform !== "darwin") {
