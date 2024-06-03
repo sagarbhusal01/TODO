@@ -13,7 +13,7 @@ export default function TextField(props: any) {
     <input
       type="text"
       id="TextField"
-      placeholder="Do some Work Here."
+      placeholder="Do some work here."
       onChange={(e) => setText(e.target.value)}
       onKeyDown={(e) => OnEnterButtonPressed(e)}
     />
