@@ -64,10 +64,11 @@
 }
 
 .ListCell {
-    height: 45px;
     width: 400px;
     padding-left: 15px;
     padding-right: 15px;
+    padding-top: 12px;
+    padding-bottom: 12px;
     padding-top: 2.5px;
     padding-bottom: 2.5px;
     background-color: #505050;
