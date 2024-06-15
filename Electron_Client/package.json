@@ -8,7 +8,8 @@
     "start": "electron-forge start",
     "build": "electron-forge make",
     "package": "electron-forge package",
-    "install": "sudo apt-get remove todo && npm run build && sudo apt install ./out/make/deb/x64/todo_1.0.0_amd64.deb"
+    "RemoveFromDevice":"sudo apt-get remove todo",
+    "InstallIntoDevice": "npm run build && sudo apt install ./out/make/deb/x64/todo_1.0.0_amd64.deb"
   },
   "author": "Sagar Bhusal",
   "license": "ISC",
