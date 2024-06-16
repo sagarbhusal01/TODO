@@ -21,6 +21,7 @@ import { GlobalStyles } from "./Global";
 import Overlay from "./Parts/Overlay";
 import AddTodoOverlayContainer from "./Parts/AddTodoOverlayContainer";
 import Setting from "./Parts/Setting";
+import { GetSavedTodo, SetSavedTodo } from "./Functions/SavedTodo";
 // ===========================
 // ===========================
 const Todo = () => {
@@ -35,9 +36,15 @@ const Todo = () => {
   }, []);
 
   const HandleGetAllTodos = () => {
-    GetAllTodos().then((res: TodoResponseType[]) => {
-      setTodoData(res);
-    });
+    GetAllTodos()
+      .then((res: TodoResponseType[]) => {
+        setTodoData(res);
+        SetSavedTodo(res);
+      })
+      .catch(async () => {
+        ToastAndroid.show("Offline Mode", ToastAndroid.LONG);
+        setTodoData(await GetSavedTodo());
+      });
   };
 
   const HandleDeleteButton = (id: number) => {
