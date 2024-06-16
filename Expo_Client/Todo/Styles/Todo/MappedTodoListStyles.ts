@@ -4,6 +4,7 @@ import {
   BACKGROUND,
   BUTTONS,
   HEIGHT,
+  IDEATAG,
   INFORMATION,
   WHITE,
   WIDTH,
@@ -12,10 +13,11 @@ import {
 export const MappedTodoListStyles = StyleSheet.create({
   TodoListContainer: {
     marginTop: 20,
-    marginBottom:200
+    marginBottom: 200,
   },
   TodoListCell: {
-    height: 60,
+    paddingTop: 12,
+    paddingBottom: 12,
     width: WIDTH * 0.88,
     alignSelf: "center",
     backgroundColor: INFORMATION,
@@ -58,5 +60,13 @@ export const MappedTodoListStyles = StyleSheet.create({
     color: WHITE,
     fontSize: 15,
     fontWeight: "600",
+  },
+
+  IdeaTag: {
+    padding: 5,
+    backgroundColor: IDEATAG,
+    textAlign: "center",
+    borderRadius: 5,
+    color: WHITE,
   },
 });

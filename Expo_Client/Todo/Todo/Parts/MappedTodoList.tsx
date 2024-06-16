@@ -24,6 +24,7 @@ const HandleEmptyData = () => {
 };
 
 const RenderingData = (names: any, props: any) => {
+  let isIdea = names.item.todo.split(" ")[0].toUpperCase() === "IDEA";
   return (
     <TouchableOpacity
       activeOpacity={0.8}
@@ -45,9 +46,27 @@ const RenderingData = (names: any, props: any) => {
           />
         )}
       </View>
-      <View style={MappedTodoListStyles.TodoTextPlaceHolder}>
-        <Text style={MappedTodoListStyles.TodoText}>{names.item.todo}</Text>
-      </View>
+      {isIdea ? (
+        <View style={MappedTodoListStyles.TodoTextPlaceHolder}>
+          <View
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              gap: 10,
+              alignItems: "center",
+            }}
+          >
+            <Text style={MappedTodoListStyles.IdeaTag}>Idea</Text>
+            <Text style={MappedTodoListStyles.TodoText}>
+              {names.item.todo.split(" ").slice(1).join(" ")}
+            </Text>
+          </View>
+        </View>
+      ) : (
+        <View style={MappedTodoListStyles.TodoTextPlaceHolder}>
+          <Text style={MappedTodoListStyles.TodoText}>{names.item.todo}</Text>
+        </View>
+      )}
 
       {names.item.iscompleted && (
         <TouchableOpacity
