@@ -1,4 +1,5 @@
 import React from "react";
+import { IDEATAG } from "../Global";
 
 export default function TodoList(props: any) {
   return (
@@ -6,6 +7,7 @@ export default function TodoList(props: any) {
       {props.Data.length ? (
         <div id="ListCellWrapper">
           {props.Data.map((names: any) => {
+            let isIdea = names.todo.split(" ")[0].toUpperCase() === "IDEA";
             return (
               <div
                 key={names.id}
@@ -26,7 +28,19 @@ export default function TodoList(props: any) {
                 </div>
 
                 <div className="TodoTextContainer">
-                  <p>{names.todo}</p>
+                  {isIdea ? (
+                    <div className="IdeaTagContainer">
+                      <p
+                        className="IdeaTag"
+                        style={{ backgroundColor: IDEATAG }}
+                      >
+                        Idea
+                      </p>
+                      <p>{names.todo.split(" ").slice(1).join(" ")}</p>
+                    </div>
+                  ) : (
+                    <p>{names.todo}</p>
+                  )}
                 </div>
 
                 <div className="DeleteButtonContainer">

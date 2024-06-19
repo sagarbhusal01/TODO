@@ -87,6 +87,23 @@
     width: 300px;
 }
 
+.IdeaTagContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    align-items: center;
+
+}
+
+.IdeaTag {
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+    text-align: center;
+    color: white;
+}
+
 
 .IsCompletedButtonContainer {
     height: 22px;

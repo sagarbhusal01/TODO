@@ -4,6 +4,7 @@ export const BUTTONS = "#868686";
 export const TEXTFEILD = "#575757";
 export const INFORMATION = "#505050";
 export const WHITE = "#ffffff";
+export const IDEATAG = "#F6A23D";
 export const GETALLTODOURL = ":1917/getalltodo";
 export const ADDTODOURL = ":1917/addtodo";
 export const TOGGLETODOURL = ":1917/togglecompleted";
