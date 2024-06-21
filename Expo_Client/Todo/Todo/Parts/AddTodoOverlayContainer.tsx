@@ -19,8 +19,8 @@ const AddTodoOverlayContainer = (props: any) => {
           style={AddTodoOverlayContainerStyles.DoneButton}
           activeOpacity={0.6}
           onPress={() => {
-            if (TodoText) {
-              props.HandleAddTodo(TodoText)
+            if (TodoText.replaceAll(" ", "").length !== 0) {
+              props.HandleAddTodo(TodoText);
             }
           }}
         >
