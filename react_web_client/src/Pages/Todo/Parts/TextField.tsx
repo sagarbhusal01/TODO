@@ -5,8 +5,10 @@ export default function TextField(props: any) {
 
   const OnEnterButtonPressed = (e: any) => {
     if (e.key === "Enter") {
-      props.HandleAddTodo(Text);
-      e.target.value = "";
+      if (Text.replaceAll(" ", "").length !== 0) {
+        props.HandleAddTodo(Text);
+        e.target.value = "";
+      }
     }
   };
   return (
