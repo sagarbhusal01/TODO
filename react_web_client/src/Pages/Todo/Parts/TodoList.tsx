@@ -1,5 +1,6 @@
 import React from "react";
 import { IDEATAG } from "../Global";
+import { DetermineTag, ExtractTodo, ParsedTag } from "../Functions/Tag";
 
 export default function TodoList(props: any) {
   return (
@@ -7,7 +8,12 @@ export default function TodoList(props: any) {
       {props.Data.length ? (
         <div id="ListCellWrapper">
           {props.Data.map((names: any) => {
-            let isIdea = names.todo.split(" ")[0].toUpperCase() === "IDEA";
+            let isTag = DetermineTag(names.todo);
+
+            let Tag = isTag ? ParsedTag(names.todo) : "";
+
+            let ExtractedTodo = isTag ? ExtractTodo(names.todo) : "";
+
             return (
               <div
                 key={names.id}
@@ -28,15 +34,15 @@ export default function TodoList(props: any) {
                 </div>
 
                 <div className="TodoTextContainer">
-                  {isIdea ? (
+                  {isTag ? (
                     <div className="IdeaTagContainer">
                       <p
                         className="IdeaTag"
                         style={{ backgroundColor: IDEATAG }}
                       >
-                        Idea
+                        {Tag}
                       </p>
-                      <p>{names.todo.split(" ").slice(1).join(" ")}</p>
+                      <p>{ExtractedTodo}</p>
                     </div>
                   ) : (
                     <p>{names.todo}</p>
