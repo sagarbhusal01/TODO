@@ -56,8 +56,6 @@ const Todo = () => {
 
   const HandleToggleTodo = (id: number) => {
     ToggleTodo(id).then((res: TodoResponseType[]) => {
-      ToastAndroid.show("Toggled Sucessfully", ToastAndroid.LONG);
-
       setTodoData(res);
     });
   };
