@@ -1,6 +1,7 @@
 import { View, Text, Image, TouchableOpacity, FlatList } from "react-native";
 import React from "react";
 import { MappedTodoListStyles } from "../../Styles/Todo/MappedTodoListStyles";
+import { DetermineTag, ParsedTag, ExtractTodo } from "../Functions/Tag";
 const MappedTodoList = (props: any) => {
   return (
     <View style={MappedTodoListStyles.TodoListContainer}>
@@ -24,7 +25,12 @@ const HandleEmptyData = () => {
 };
 
 const RenderingData = (names: any, props: any) => {
-  let isIdea = names.item.todo.split(" ")[0].toUpperCase() === "IDEA";
+  let isTag = DetermineTag(names.item.todo);
+
+  let Tag = isTag ? ParsedTag(names.item.todo) : "";
+
+  let ExtractedTodo = isTag ? ExtractTodo(names.item.todo) : "";
+
   return (
     <TouchableOpacity
       activeOpacity={0.8}
@@ -46,7 +52,7 @@ const RenderingData = (names: any, props: any) => {
           />
         )}
       </View>
-      {isIdea ? (
+      {isTag ? (
         <View style={MappedTodoListStyles.TodoTextPlaceHolder}>
           <View
             style={{
@@ -56,10 +62,8 @@ const RenderingData = (names: any, props: any) => {
               alignItems: "center",
             }}
           >
-            <Text style={MappedTodoListStyles.IdeaTag}>Idea</Text>
-            <Text style={MappedTodoListStyles.TodoText}>
-              {names.item.todo.split(" ").slice(1).join(" ")}
-            </Text>
+            <Text style={MappedTodoListStyles.IdeaTag}>{Tag}</Text>
+            <Text style={MappedTodoListStyles.TodoText}>{ExtractedTodo}</Text>
           </View>
         </View>
       ) : (
