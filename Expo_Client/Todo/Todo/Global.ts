@@ -6,6 +6,7 @@ export const BUTTONS = "#868686";
 export const TEXTFEILD = "#575757";
 export const INFORMATION = "#505050";
 export const IDEATAG="#F6A23D"
+export const EMERGENCYTAG = "tomato";
 export const WIDTH = Dimensions.get("screen").width;
 export const WHITE = "#ffffff";
 export const HEIGHT = Dimensions.get("screen").height;
