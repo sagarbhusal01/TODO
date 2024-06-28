@@ -7,5 +7,12 @@ export const ExtractTodo = (todo: string) => {
 };
 
 export const DetermineTag = (todo: string) => {
-  return todo.split(" ")[0].substring(0, 1) === "-";
+  return (
+    todo.split(" ")[0].substring(0, 1) === "-" ||
+    todo.split(" ")[0].substring(0, 1) === "_"
+  );
+};
+
+export const DetermineEmergencyTag = (todo: string) => {
+  return todo.split(" ")[0].substring(0, 1) === "_";
 };
