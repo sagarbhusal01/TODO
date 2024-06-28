@@ -1,6 +1,11 @@
 import React from "react";
-import { IDEATAG } from "../Global";
-import { DetermineTag, ExtractTodo, ParsedTag } from "../Functions/Tag";
+import { EMERGENCYTAG, IDEATAG } from "../Global";
+import {
+  DetermineEmergencyTag,
+  DetermineTag,
+  ExtractTodo,
+  ParsedTag,
+} from "../Functions/Tag";
 
 export default function TodoList(props: any) {
   return (
@@ -9,6 +14,7 @@ export default function TodoList(props: any) {
         <div id="ListCellWrapper">
           {props.Data.map((names: any) => {
             let isTag = DetermineTag(names.todo);
+            let isEmergency = DetermineEmergencyTag(names.todo);
 
             let Tag = isTag ? ParsedTag(names.todo) : "";
 
@@ -38,7 +44,9 @@ export default function TodoList(props: any) {
                     <div className="IdeaTagContainer">
                       <p
                         className="IdeaTag"
-                        style={{ backgroundColor: IDEATAG }}
+                        style={{
+                          backgroundColor: isEmergency ? EMERGENCYTAG : IDEATAG,
+                        }}
                       >
                         {Tag}
                       </p>
