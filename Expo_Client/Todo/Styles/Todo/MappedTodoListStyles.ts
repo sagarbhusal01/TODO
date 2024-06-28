@@ -64,7 +64,8 @@ export const MappedTodoListStyles = StyleSheet.create({
 
   IdeaTag: {
     padding: 5,
-    backgroundColor: IDEATAG,
+    paddingLeft: 8,
+    paddingRight: 8,
     textAlign: "center",
     borderRadius: 5,
     color: WHITE,
