@@ -19,15 +19,14 @@ import { AddTodo } from "./Functions/AddTodo";
 import AddTodoButton from "./Parts/AddTodoButton";
 import { GlobalStyles } from "./Global";
 import Overlay from "./Parts/Overlay";
-import AddTodoOverlayContainer from "./Parts/AddTodoOverlayContainer";
 import Setting from "./Parts/Setting";
 import { GetSavedTodo, SetSavedTodo } from "./Functions/SavedTodo";
+import TextField from "./Parts/TextField";
 // ===========================
 // ===========================
 const Todo = () => {
   // =================================
   const [TodoData, setTodoData] = useState<TodoResponseType[]>();
-  const [ToggleOverlay, setToggleOverlay] = useState<Boolean>(false);
   const [ToggleSetting, setToggleSetting] = useState<Boolean>(false);
   // =================================
 
@@ -61,11 +60,12 @@ const Todo = () => {
   };
 
   const HandleAddTodo = (todo: string) => {
-    AddTodo(todo).then((res: TodoResponseType[]) => {
-      setTodoData(res);
-      setToggleOverlay(false);
-      ToastAndroid.show("Todo Added Sucessfully", ToastAndroid.LONG);
-    });
+    if (todo.replaceAll(" ", "").length !== 0) {
+      AddTodo(todo).then((res: TodoResponseType[]) => {
+        setTodoData(res);
+        ToastAndroid.show("Todo Added Sucessfully", ToastAndroid.LONG);
+      });
+    }
   };
 
   const HandleLocalURL = async (URL: string) => {
@@ -93,21 +93,13 @@ const Todo = () => {
         Toggle={ToggleSetting}
         Children={<Setting HandleLocalURL={HandleLocalURL} />}
       />
-
+      <TextField HandleAddTodo={HandleAddTodo} />
       <MappedTodoList
         TodoData={TodoData}
         HandleDeleteButton={HandleDeleteButton}
         HandleToggleTodo={HandleToggleTodo}
         refreshing={refreshing}
         HandleRefresh={HandleRefresh}
-      />
-
-      <AddTodoButton setToggleOverlay={setToggleOverlay} />
-
-      <Overlay
-        setToggle={setToggleOverlay}
-        Toggle={ToggleOverlay}
-        Children={<AddTodoOverlayContainer HandleAddTodo={HandleAddTodo} />}
       />
     </View>
   );
