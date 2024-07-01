@@ -23,7 +23,7 @@ export const MappedTodoListStyles = StyleSheet.create({
     backgroundColor: INFORMATION,
     borderRadius: 10,
     display: "flex",
-    marginTop: 10,
+    marginBottom: 10,
     flexDirection: "row",
     alignItems: "center",
   },
