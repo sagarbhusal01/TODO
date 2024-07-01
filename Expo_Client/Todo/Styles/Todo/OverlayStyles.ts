@@ -1,13 +1,5 @@
 import { StyleSheet, Dimensions } from "react-native";
 
-import {
-  BACKGROUND,
-  BUTTONS,
-  HEIGHT,
-  INFORMATION,
-  WHITE,
-  WIDTH,
-} from "../../Todo/Global";
 
 export const OverlayStyles = StyleSheet.create({
   OverlayBackground: {
@@ -17,6 +9,6 @@ export const OverlayStyles = StyleSheet.create({
     right: 0,
     left: 0,
     bottom: 0,
-    zIndex: 8,
+    zIndex: 2,
   },
 });
