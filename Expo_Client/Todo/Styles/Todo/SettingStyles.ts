@@ -13,7 +13,7 @@ import {
 export const SettingStyles = StyleSheet.create({
   Container: {
     position: "absolute",
-    top: HEIGHT * 0.45 - 180 / 4,
+    top: HEIGHT * 0.45 - 180 / 3,
     width: WIDTH * 0.9,
     backgroundColor: BACKGROUND,
     alignSelf: "center",
