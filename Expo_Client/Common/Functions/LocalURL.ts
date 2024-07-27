@@ -1,6 +1,6 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { GETALLTODOURL } from "../../../Global/CONSTANTS"
-import { TodoResponseType } from "../../../Global/Types";
+import { GETALLTODOURL } from "../../Global/CONSTANTS";
+import { TodoResponseType } from "../../Global/Types";
 
 export const GetLocalURL = async () => {
   return await AsyncStorage.getItem("$LOCAL_IP");
@@ -15,7 +15,7 @@ export const SetLocalURL = async (value: string) => {
 };
 
 export const TestNewIP = async (NewIP: string) => {
-  let url = "http://" + NewIP + GETALLTODOURL;
+  let url = NewIP + GETALLTODOURL;
 
   return fetch(url)
     .then((response) => {

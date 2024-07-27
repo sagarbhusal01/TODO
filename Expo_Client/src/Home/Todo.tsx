@@ -1,25 +1,15 @@
-import {
-  View,
-  Text,
-  Image,
-  TouchableOpacity,
-  ToastAndroid,
-  ScrollView,
-  RefreshControl,
-} from "react-native";
+import { View, ToastAndroid } from "react-native";
 import React, { useEffect, useLayoutEffect, useState } from "react";
 import Header from "./Parts/Header";
 import MappedTodoList from "./Parts/MappedTodoList";
-import { GetAllTodos } from "./Functions/GetAllTodos";
+import { GetAllTodos } from "../../Common/Functions/GetAllTodos";
 import { TodoResponseType } from "../../Global/Types";
-import { SetLocalURL } from "./Functions/LocalURL";
-import { DeleteTodo } from "./Functions/DeleteTodo";
-import { ToggleTodo } from "./Functions/ToggleTodo";
-import { AddTodo } from "./Functions/AddTodo";
+import { DeleteTodo } from "../../Common/Functions/DeleteTodo";
+import { ToggleTodo } from "../../Common/Functions/ToggleTodo";
+import { AddTodo } from "../../Common/Functions/AddTodo";
 import { GlobalStyles } from "../../Global/CONSTANTS";
 import { GetSavedTodo, SetSavedTodo } from "./Functions/SavedTodo";
-import TextField from "./Parts/TextField";
-import { NavigationProp } from "@react-navigation/native";
+import TextField from "../../Common/TextField/TextField";
 // ===========================
 // ===========================
 const Todo = ({ navigation }: any) => {
@@ -82,7 +72,8 @@ const Todo = ({ navigation }: any) => {
     <View style={GlobalStyles.Container}>
       <Header HandleSettingButtonPressed={HandleSettingButtonPressed} />
 
-      <TextField HandleAddTodo={HandleAddTodo} />
+      <TextField HandleEnter={HandleAddTodo} Title={"Do some Work Here."} />
+
       <MappedTodoList
         TodoData={TodoData}
         HandleDeleteButton={HandleDeleteButton}

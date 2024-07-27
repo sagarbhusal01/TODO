@@ -8,7 +8,7 @@ import {
   WHITE,
   WIDTH,
   TEXTFEILD,
-} from "./CONSTANTS";
+} from "../../Global/CONSTANTS";
 
 const SettingStyles = StyleSheet.create({
   Container: {

@@ -1,10 +1,10 @@
-import { TOGGLETODOURL } from "../../../Global/CONSTANTS";
-import { TodoResponseType } from "../../../Global/Types";
+import { TOGGLETODOURL } from "../../Global/CONSTANTS";
+import { TodoResponseType } from "../../Global/Types";
 import { GetLocalURL } from "./LocalURL";
 
 export const ToggleTodo = async (id: number) => {
   let LocalIP = await GetLocalURL();
-  let url = "http://" + LocalIP + TOGGLETODOURL + "/" + id;
+  let url = LocalIP + TOGGLETODOURL + "/" + id;
 
   return fetch(url, {
     method: "PUT",

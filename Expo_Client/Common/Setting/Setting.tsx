@@ -1,8 +1,8 @@
 import { View, Text, TextInput, TouchableOpacity } from "react-native";
 import React, { useState } from "react";
-import { PLACEHOLDER } from "./CONSTANTS";
-import { SettingStyles } from "./SettingStyles";
-import { GetLocalURL } from "../src/Home/Functions/LocalURL";
+import { PLACEHOLDER } from "../../Global/CONSTANTS";
+import { SettingStyles } from "../Global/SettingStyles";
+import { GetLocalURL } from "../Functions/LocalURL";
 
 const Setting = (props: any) => {
   const [NewURL, setNewURL] = useState<String>("");
