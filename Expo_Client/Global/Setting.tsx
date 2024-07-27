@@ -1,8 +1,8 @@
 import { View, Text, TextInput, TouchableOpacity } from "react-native";
 import React, { useState } from "react";
-import { PLACEHOLDER } from "../Global";
-import { SettingStyles } from "../../Styles/Todo/SettingStyles";
-import { GetLocalURL } from "../Functions/LocalURL";
+import { PLACEHOLDER } from "./CONSTANTS";
+import { SettingStyles } from "./SettingStyles";
+import { GetLocalURL } from "../src/Home/Functions/LocalURL";
 
 const Setting = (props: any) => {
   const [NewURL, setNewURL] = useState<String>("");
@@ -38,4 +38,4 @@ const Setting = (props: any) => {
   );
 };
 
-export default Setting;
+

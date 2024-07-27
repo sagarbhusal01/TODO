@@ -1,7 +1,7 @@
 import { View, Text, TextInput } from "react-native";
 import React, { useState } from "react";
-import { PLACEHOLDER } from "../Global";
-import { TextFieldStyles } from "../../Styles/Todo/TextFieldStyles";
+import { PLACEHOLDER } from "../../../Global/CONSTANTS";
+import { TextFieldStyles } from "../../../Styles/Todo/TextFieldStyles";
 
 export default function TextField(props: any) {
   const [TodoText, setTodoText] = useState<string>();

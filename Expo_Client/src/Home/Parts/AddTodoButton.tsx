@@ -1,6 +1,6 @@
 import { View, Text, TouchableOpacity, Image } from "react-native";
 import React from "react";
-import { AddTodoButtonStyles } from "../../Styles/Todo/AddTodoButtonStyles";
+import { AddTodoButtonStyles } from "../../../Styles/Todo/AddTodoButtonStyles";
 
 const AddTodoButton = (props: any) => {
   return (

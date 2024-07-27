@@ -8,9 +8,9 @@ import {
   WHITE,
   WIDTH,
   TEXTFEILD,
-} from "../../Todo/Global";
+} from "./CONSTANTS";
 
-export const SettingStyles = StyleSheet.create({
+const SettingStyles = StyleSheet.create({
   Container: {
     position: "absolute",
     top: HEIGHT * 0.45 - 180 / 3,

@@ -1,5 +1,5 @@
-import { TodoResponseType } from "../Types";
-import { GETALLTODOURL } from "../Global";
+import { TodoResponseType } from "../../../Global/Types";
+import { GETALLTODOURL } from "../../../Global/CONSTANTS";
 import { GetLocalURL } from "./LocalURL";
 export const GetAllTodos = async () => {
   let LocalIP = await GetLocalURL();

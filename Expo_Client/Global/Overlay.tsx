@@ -1,6 +1,6 @@
 import { View, Text, TouchableOpacity } from "react-native";
 import React from "react";
-import { OverlayStyles } from "../../Styles/Todo/OverlayStyles";
+import { OverlayStyles } from "./OverlayStyles";
 
 const Overlay = (props: any) => {
   return (

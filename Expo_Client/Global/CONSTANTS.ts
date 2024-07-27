@@ -20,4 +20,7 @@ export const GlobalStyles = StyleSheet.create({
     flex: 1,
     backgroundColor: BACKGROUND,
   },
+  Wrapper: {
+    marginTop: HEIGHT * 0.05,
+  },
 });

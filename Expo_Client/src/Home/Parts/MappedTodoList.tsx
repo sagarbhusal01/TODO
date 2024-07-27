@@ -1,8 +1,13 @@
 import { View, Text, Image, TouchableOpacity, FlatList } from "react-native";
 import React from "react";
-import { MappedTodoListStyles } from "../../Styles/Todo/MappedTodoListStyles";
-import { DetermineTag, ParsedTag, ExtractTodo, DetermineEmergencyTag } from "../Functions/Tag";
-import { EMERGENCYTAG, IDEATAG } from "../Global";
+import { MappedTodoListStyles } from "../../../Styles/Todo/MappedTodoListStyles";
+import {
+  DetermineTag,
+  ParsedTag,
+  ExtractTodo,
+  DetermineEmergencyTag,
+} from "../Functions/Tag";
+import { EMERGENCYTAG, IDEATAG } from "../../../Global/CONSTANTS";
 const MappedTodoList = (props: any) => {
   return (
     <View style={MappedTodoListStyles.TodoListContainer}>
@@ -29,7 +34,7 @@ const RenderingData = (names: any, props: any) => {
   let isTag = DetermineTag(names.item.todo);
 
   let isEmergency = DetermineEmergencyTag(names.item.todo);
-  
+
   let Tag = isTag ? ParsedTag(names.item.todo) : "";
 
   let ExtractedTodo = isTag ? ExtractTodo(names.item.todo) : "";
@@ -65,7 +70,14 @@ const RenderingData = (names: any, props: any) => {
               alignItems: "center",
             }}
           >
-            <Text style={[MappedTodoListStyles.IdeaTag,{backgroundColor:isEmergency?EMERGENCYTAG:IDEATAG}]}>{Tag}</Text>
+            <Text
+              style={[
+                MappedTodoListStyles.IdeaTag,
+                { backgroundColor: isEmergency ? EMERGENCYTAG : IDEATAG },
+              ]}
+            >
+              {Tag}
+            </Text>
             <Text style={MappedTodoListStyles.TodoText}>{ExtractedTodo}</Text>
           </View>
         </View>
@@ -84,7 +96,7 @@ const RenderingData = (names: any, props: any) => {
           }}
         >
           <Image
-            source={require("../../assets/Images/Remove.png")}
+            source={require("../../../assets/Images/Remove.png")}
             style={MappedTodoListStyles.RemoveButtonImage}
           />
         </TouchableOpacity>

@@ -7,7 +7,7 @@ import {
   INFORMATION,
   WHITE,
   WIDTH,
-} from "../../Todo/Global";
+} from "../../Global/CONSTANTS";
 
 export const AddTodoButtonStyles = StyleSheet.create({
   AddTodoButton: {

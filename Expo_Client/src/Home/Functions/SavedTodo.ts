@@ -1,5 +1,5 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { TodoResponseType } from "../Types";
+import { TodoResponseType } from "../../../Global/Types";
 
 export const GetSavedTodo = async () => {
   let value = await AsyncStorage.getItem("$SAVED_TODO");

@@ -1,7 +1,7 @@
 import { View, Text, TextInput, TouchableOpacity } from "react-native";
 import React, { useState } from "react";
-import { AddTodoOverlayContainerStyles } from "../../Styles/Todo/AddTodoOverlayContainerStyles";
-import { PLACEHOLDER } from "../Global";
+import { AddTodoOverlayContainerStyles } from "../../../Styles/Todo/AddTodoOverlayContainerStyles";
+import { PLACEHOLDER } from "../../../Global/CONSTANTS";
 
 const AddTodoOverlayContainer = (props: any) => {
   const [TodoText, setTodoText] = useState<String>("");

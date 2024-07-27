@@ -1,21 +1,17 @@
-import { ADDTODOURL, GETALLTODOURL } from "../Global";
-import { TodoResponseType } from "../Types";
+import { DELETETODOURL } from "../../../Global/CONSTANTS";
+import { TodoResponseType } from "../../../Global/Types";
 import { GetLocalURL } from "./LocalURL";
 
-export const AddTodo = async (todo: string) => {
+export const DeleteTodo = async (id: number) => {
   let LocalIP = await GetLocalURL();
-  let url = "http://" + LocalIP + ADDTODOURL;
+  let url = "http://" + LocalIP + DELETETODOURL +"/"+ id;
 
   return fetch(url, {
-    method: "POST",
+    method: "DELETE",
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({
-      todo: todo,
-      iscompleted: false,
-    }),
   })
     .then((response) => {
       return response.json();

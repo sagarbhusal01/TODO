@@ -8,7 +8,7 @@ import {
   WHITE,
   WIDTH,
   TEXTFEILD,
-} from "../../Todo/Global";
+} from "../../Global/CONSTANTS";
 
 export const AddTodoOverlayContainerStyles = StyleSheet.create({
   Container: {

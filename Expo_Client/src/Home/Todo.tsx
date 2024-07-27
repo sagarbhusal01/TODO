@@ -11,23 +11,20 @@ import React, { useEffect, useLayoutEffect, useState } from "react";
 import Header from "./Parts/Header";
 import MappedTodoList from "./Parts/MappedTodoList";
 import { GetAllTodos } from "./Functions/GetAllTodos";
-import { TodoResponseType } from "./Types";
+import { TodoResponseType } from "../../Global/Types";
 import { SetLocalURL } from "./Functions/LocalURL";
 import { DeleteTodo } from "./Functions/DeleteTodo";
 import { ToggleTodo } from "./Functions/ToggleTodo";
 import { AddTodo } from "./Functions/AddTodo";
-import AddTodoButton from "./Parts/AddTodoButton";
-import { GlobalStyles } from "./Global";
-import Overlay from "./Parts/Overlay";
-import Setting from "./Parts/Setting";
+import { GlobalStyles } from "../../Global/CONSTANTS";
 import { GetSavedTodo, SetSavedTodo } from "./Functions/SavedTodo";
 import TextField from "./Parts/TextField";
+import { NavigationProp } from "@react-navigation/native";
 // ===========================
 // ===========================
-const Todo = () => {
+const Todo = ({ navigation }: any) => {
   // =================================
   const [TodoData, setTodoData] = useState<TodoResponseType[]>();
-  const [ToggleSetting, setToggleSetting] = useState<Boolean>(false);
   // =================================
 
   useEffect(() => {
@@ -67,12 +64,8 @@ const Todo = () => {
       });
     }
   };
-
-  const HandleLocalURL = async (URL: string) => {
-    SetLocalURL(URL).then(() => {
-      setToggleSetting(false);
-      HandleGetAllTodos();
-    });
+  const HandleSettingButtonPressed = () => {
+    navigation.navigate("Setting");
   };
 
   const [refreshing, setRefreshing] = React.useState(false);
@@ -87,12 +80,8 @@ const Todo = () => {
 
   return (
     <View style={GlobalStyles.Container}>
-      <Header setToggleSetting={setToggleSetting} />
-      <Overlay
-        setToggle={setToggleSetting}
-        Toggle={ToggleSetting}
-        Children={<Setting HandleLocalURL={HandleLocalURL} />}
-      />
+      <Header HandleSettingButtonPressed={HandleSettingButtonPressed} />
+
       <TextField HandleAddTodo={HandleAddTodo} />
       <MappedTodoList
         TodoData={TodoData}

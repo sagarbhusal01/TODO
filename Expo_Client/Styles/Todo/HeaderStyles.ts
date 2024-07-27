@@ -7,7 +7,7 @@ import {
   INFORMATION,
   WHITE,
   WIDTH,
-} from "../../Todo/Global";
+} from "../../Global/CONSTANTS";
 
 export const HeaderStyles = StyleSheet.create({
   Wrapper: {

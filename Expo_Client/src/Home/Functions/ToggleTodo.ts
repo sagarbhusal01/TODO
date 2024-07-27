@@ -1,5 +1,5 @@
-import { TOGGLETODOURL } from "../Global";
-import { TodoResponseType } from "../Types";
+import { TOGGLETODOURL } from "../../../Global/CONSTANTS";
+import { TodoResponseType } from "../../../Global/Types";
 import { GetLocalURL } from "./LocalURL";
 
 export const ToggleTodo = async (id: number) => {
