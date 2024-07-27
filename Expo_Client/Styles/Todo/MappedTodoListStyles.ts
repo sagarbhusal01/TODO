@@ -16,8 +16,8 @@ export const MappedTodoListStyles = StyleSheet.create({
     marginBottom: 200,
   },
   TodoListCell: {
-    paddingTop: 12,
-    paddingBottom: 12,
+    paddingTop: 20,
+    paddingBottom: 20,
     width: WIDTH * 0.88,
     alignSelf: "center",
     backgroundColor: INFORMATION,
@@ -29,7 +29,6 @@ export const MappedTodoListStyles = StyleSheet.create({
   },
   ToggleButtonPlaceholder: {
     width: 45,
-    height: 40,
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
@@ -52,6 +51,7 @@ export const MappedTodoListStyles = StyleSheet.create({
   },
   TodoText: {
     color: WHITE,
+    width: WIDTH * 0.67 - WIDTH * 0.21,
     fontSize: 15,
     fontWeight: "600",
   },
